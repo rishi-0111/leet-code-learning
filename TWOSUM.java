@@ -1,23 +1,20 @@
-
-
 import java.util.*;
 
 class Main {
 
-    public int[] Twosum(int a[], int key) {
+    public void Twosum(int[] a, int key) {
 
         for(int i = 0; i < a.length; i++) {
-
             for(int j = i + 1; j < a.length; j++) {
 
                 if(a[i] + a[j] == key) {
-                    return new int[]{i, j};
+                    System.out.println(i + " " + j);
+                    return;
                 }
-
             }
         }
 
-        return new int[]{};
+        System.out.println("No Pair Found");
     }
 
     public static void main(String[] args) {
@@ -26,7 +23,7 @@ class Main {
 
         int n = sc.nextInt();
 
-        int a[] = new int[n];
+        int[] a = new int[n];
 
         for(int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
@@ -36,8 +33,6 @@ class Main {
 
         Main obj = new Main();
 
-        int[] ans = obj.Twosum(a, key);
-
-        System.out.println(Arrays.toString(ans));
+        obj.Twosum(a, key);
     }
 }
